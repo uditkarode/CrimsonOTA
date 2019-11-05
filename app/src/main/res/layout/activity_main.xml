@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#000000">
+
+    <ImageView
+        android:id="@+id/head"
+        android:layout_width="380dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10.5dp"
+        android:contentDescription="@string/app_name"
+        android:padding="20dp"
+        android:src="@drawable/crimson_512" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/head"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_margin="7.5dp"
+            card_view:cardBackgroundColor="#212121"
+            card_view:cardCornerRadius="6dp">
+
+            <RelativeLayout
+                android:id="@+id/loader"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_height="wrap_content"
+                    app:lottie_fileName="ripple_loading.json"
+                    app:lottie_loop="true"
+                    app:lottie_autoPlay="true" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/content"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <ImageView
+                    android:id="@+id/updateStatusImg"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/tick" />
+
+                <TextView
+                    android:id="@+id/updateStatusTv"
+                    fontPath="RobotoMono-Medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text="Latest version is installed!"
+                    android:textColor="#fbfbfb"
+                    android:textSize="18.5sp"
+                    tools:ignore="MissingPrefix" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/updateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Download Update"
+            />
+
+        <TextView
+            android:id="@+id/updateBuildDateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:textColor="#fbfbfb"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20.5sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginVertical="20dp"
+            android:background="#40fbfbfb" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="codename: "
+                android:textColor="#ffc107"
+                android:textSize="20.5sp" />
+
+            <TextView
+                android:id="@+id/codeNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loading..."
+                android:textColor="#fbfbfb"
+                android:textSize="20.5sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="caf tag: "
+                android:textColor="#ffc107"
+                android:textSize="20.5sp" />
+
+            <TextView
+                android:id="@+id/cafTagTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loading..."
+                android:textColor="#fbfbfb"
+                android:textSize="20.5sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="date: "
+                android:textColor="#ffc107"
+                android:textSize="20.5sp" />
+
+            <TextView
+                android:id="@+id/buildDateTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loading..."
+                android:textColor="#fbfbfb"
+                android:textSize="20.5sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="linux: "
+                android:textColor="#ffc107"
+                android:textSize="20.5sp" />
+
+            <TextView
+                android:id="@+id/linuxVersionTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loading..."
+                android:textColor="#fbfbfb"
+                android:textSize="20.5sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="build"
+                android:textColor="#ffc107"
+                android:textSize="20.5sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=": nightly"
+                android:textColor="#fbfbfb"
+                android:textSize="20.5sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="device"
+                android:textColor="#ffc107"
+                android:textSize="20.5sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=": violet"
+                android:textColor="#fbfbfb"
+                android:textSize="20.5sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/telegramFooter"
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            android:src="@drawable/telegram"
+            android:contentDescription="Telegram" />
+
+        <ImageView
+            android:id="@+id/githubFooter"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/github"
+            android:tint="#fbfbfb"
+            android:contentDescription="GitHub" />
+    </LinearLayout>
+
+</RelativeLayout>
