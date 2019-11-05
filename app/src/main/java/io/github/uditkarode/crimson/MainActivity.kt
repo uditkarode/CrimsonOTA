@@ -115,13 +115,14 @@ class MainActivity : AppCompatActivity() {
             .getAsJSONObject(object: JSONObjectRequestListener {
                 override fun onResponse(response: JSONObject) {
                     val latestDate = SimpleDateFormat("MMM dd HH yyyy", Locale.ENGLISH).parse(response.getString("builtAt") + " ${Constants.CURRENT_YEAR}")
-                    if(latestDate.after(buildDate)){
-                        val codeName = response.getString("codeName")
-                        val cafTag = response.getString("cafTag")
-                        val linuxVersion = response.getString("linuxVersion")
-                        val buildFdate = SimpleDateFormat("dd/MM/yyyy hh a", Locale.ENGLISH).format(latestDate)
+                    val latestFDate = SimpleDateFormat("dd/mm/yyyy hh a", Locale.ENGLISH).format(latestDate)
+                    val codeName = response.getString("codeName")
+                    val cafTag = response.getString("cafTag")
+                    val linuxVersion = response.getString("linuxVersion")
+                    val buildFdate = SimpleDateFormat("dd/MM/yyyy hh a", Locale.ENGLISH).format(latestDate)
+                    val editor = sp.edit()
 
-                        val editor = sp.edit()
+                    if(latestDate.after(buildDate)){
                         editor.putString("codeName", codeName)
                         editor.putString("cafTag", cafTag)
                         editor.putString("linuxVersion", linuxVersion)
@@ -141,11 +142,6 @@ class MainActivity : AppCompatActivity() {
                     } else {
                         stopLoading(false)
                         if(!areStatsStored()){
-                            val codeName = response.getString("codeName")
-                            val cafTag = response.getString("cafTag")
-                            val linuxVersion = response.getString("linuxVersion")
-                            val latestFDate = SimpleDateFormat("dd/mm/yyyy hh a", Locale.ENGLISH).format(latestDate)
-                            val editor = sp.edit()
                             editor.putString("codename", codeName)
                             editor.putString("caftag", cafTag)
                             editor.putString("linuxVersion", linuxVersion)
