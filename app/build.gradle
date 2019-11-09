@@ -22,14 +22,14 @@ android {
         versionCode 1
         versionName "1.0"
         manifestPlaceholders = [
-                onesignal_app_id: '',
+                onesignal_app_id: 'a8440cf8-1df3-4efb-9a3f-b83c562e50e7',
                 onesignal_google_project_number: 'REMOTE'
         ]
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
