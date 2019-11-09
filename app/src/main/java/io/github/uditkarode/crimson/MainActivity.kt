@@ -115,7 +115,7 @@ class MainActivity : AppCompatActivity() {
             .getAsJSONObject(object: JSONObjectRequestListener {
                 override fun onResponse(response: JSONObject) {
                     val latestDate = SimpleDateFormat("MMM dd HH yyyy", Locale.ENGLISH).parse(response.getString("builtAt") + " ${Constants.CURRENT_YEAR}")
-                    val latestFDate = SimpleDateFormat("dd/mm/yyyy hh a", Locale.ENGLISH).format(latestDate)
+                    val latestFDate = SimpleDateFormat("dd/MM/yyyy hh a", Locale.ENGLISH).format(latestDate)
                     val codeName = response.getString("codeName")
                     val cafTag = response.getString("cafTag")
                     val linuxVersion = response.getString("linuxVersion")
