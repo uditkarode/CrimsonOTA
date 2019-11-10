@@ -123,18 +123,16 @@ class MainActivity : AppCompatActivity() {
                     val editor = sp.edit()
 
                     if(latestDate.after(buildDate)){
-                        editor.putString("codeName", codeName)
-                        editor.putString("cafTag", cafTag)
-                        editor.putString("linuxVersion", linuxVersion)
-                        editor.putString("buildDate", buildFdate)
+                        editor.putString("codeName", "An update is available")
+                        editor.putString("cafTag", "An update is available")
+                        editor.putString("linuxVersion", "An update is available")
+                        editor.putString("buildDate", "An update is available")
                         editor.apply()
 
-                        if(!areStatsStored()) {
-                            codeNameTv.text = "Update available"
-                            cafTagTv.text = "Update available"
-                            linuxVersionTv.text = "Update available"
-                            buildDateTv.text = "Update available"
-                        }
+                        codeNameTv.text = codeName
+                        cafTagTv.text = cafTag
+                        linuxVersionTv.text = linuxVersion
+                        buildDateTv.text = buildFdate
 
                         updateBuildDateTv.text = "built at: $buildFdate"
                         updateBuildDateTv.visibility = View.VISIBLE
