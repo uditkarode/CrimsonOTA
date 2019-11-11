@@ -123,10 +123,10 @@ class MainActivity : AppCompatActivity() {
                     val editor = sp.edit()
 
                     if(latestDate.after(buildDate)){
-                        editor.putString("codeName", "An update is available")
-                        editor.putString("cafTag", "An update is available")
-                        editor.putString("linuxVersion", "An update is available")
-                        editor.putString("buildDate", "An update is available")
+                        editor.putString("codeName", codeName)
+                        editor.putString("cafTag", cafTag)
+                        editor.putString("linuxVersion", linuxVersion)
+                        editor.putString("buildDate", latestFDate)
                         editor.apply()
 
                         codeNameTv.text = codeName
@@ -140,8 +140,8 @@ class MainActivity : AppCompatActivity() {
                     } else {
                         stopLoading(false)
                         if(!areStatsStored()){
-                            editor.putString("codename", codeName)
-                            editor.putString("caftag", cafTag)
+                            editor.putString("codeName", codeName)
+                            editor.putString("cafTag", cafTag)
                             editor.putString("linuxVersion", linuxVersion)
                             editor.putString("buildDate", latestFDate)
                             editor.apply()
