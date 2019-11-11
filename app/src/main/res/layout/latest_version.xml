@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#212121"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="latest P tag: "
+                android:textColor="#ffc107"
+                android:textSize="20.5sp" />
+
+            <TextView
+                android:id="@+id/lPCodename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loading..."
+                android:textColor="#fbfbfb"
+                android:textSize="20.5sp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/pTagLatest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Copy P Tag Link"
+            android:visibility="gone"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="latest Q tag: "
+                android:textColor="#ffc107"
+                android:textSize="20.5sp" />
+
+            <TextView
+                android:id="@+id/lQCodename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loading..."
+                android:textColor="#fbfbfb"
+                android:textSize="20.5sp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/qTagLatest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp"
+            android:visibility="gone"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Copy Q Tag Link"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/telegramFooterLV"
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            android:src="@drawable/telegram"
+            android:contentDescription="Telegram" />
+
+        <ImageView
+            android:id="@+id/githubFooterLV"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/github"
+            android:tint="#fbfbfb"
+            android:contentDescription="GitHub" />
+    </LinearLayout>
+
+</RelativeLayout>
