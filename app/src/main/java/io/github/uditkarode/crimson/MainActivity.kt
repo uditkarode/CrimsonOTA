@@ -56,6 +56,9 @@ class MainActivity : AppCompatActivity() {
         sp = getSharedPreferences("kernelStats", 0)
         telegramFooter.setOnClickListener { startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/crimsonviolet"))) }
         githubFooter.setOnClickListener { startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/uditkarode/crimson"))) }
+        head.setOnClickListener {
+            startActivity(Intent(this@MainActivity, LatestVersions::class.java))
+        }
 
         val kernelVersion = readKernelVersion()
 
@@ -67,8 +70,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         if(!kernelVersion.contains(Constants.KERNEL_NAME.toLowerCase(Locale.getDefault()))){
-            Toast.makeText(this@MainActivity, "You are not using the ${Constants.KERNEL_NAME} kernel!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this@MainActivity, "You are not using the Crimson kernel - get it now! ONLY VIOLET", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this@MainActivity, LatestVersions::class.java))
             finish()
+        } else {
+            if(!kernelVersion.contains("minimal")){
+                Toast.makeText(this@MainActivity, "This application is not for P tag kernels for now. Only latest links will be shown.", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this@MainActivity, LatestVersions::class.java))
+                finish()
+            }
         }
 
         val buildDate = SimpleDateFormat("MMM dd HH yyyy", Locale.ENGLISH).parse(kernelVersion.substring(kernelVersion.lastIndexOf("PREEMPT")).substring(12, 20) + " ${Constants.CURRENT_YEAR}")
